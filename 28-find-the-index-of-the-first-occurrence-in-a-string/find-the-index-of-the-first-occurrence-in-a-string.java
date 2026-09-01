@@ -7,6 +7,22 @@ class Solution {
         So I'm choosing KMP because it avoids repeated comparisons and scales better for large strings.
         */
 
+        /* 
+        
+        n = haystack.length();
+        int m = needle.length();
+        
+        // Loop through all possible starting positions
+        for (int i = 0; i <= n - m; i++) {
+            // Check if the substring matches the needle
+            if (haystack.substring(i, i + m).equals(needle)) {
+                return i;
+            }
+        }
+        return -1;
+
+        */
+
         int[] lps = buildLPS(needle);
 
         int i = 0; // haystack pointer
@@ -56,6 +72,10 @@ class Solution {
         }
 
         return lps;
+
+        /* 
+        return haystack.indexOf(needle);
+        */
 
         /* 
         Optimal approach: KMP
